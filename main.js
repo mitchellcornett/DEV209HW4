@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         f = new food(item.value, cal.value);
         foods.push(f);
         cals += f.getCals();
-        out.innerHTML = cals;
+        out.value = cals;
     });
     
 });
