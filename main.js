@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     let foods = [];
     let cals = 0;
     done.addEventListener("click", function () {
-        f = new new food(item.value, cal.value);
+        f = new food(item.value, cal.value);
         foods.push(f);
         cals += f.getCals();
         out.innerHTML = cals;
