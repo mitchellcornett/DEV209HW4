@@ -2,27 +2,23 @@ const item = document.getElementById("foodTypeInput");
 const cal = document.getElementById("calorieAmountInput");
 const done = document.getElementById("submitButton");
 const out = document.getElementById("totalCaloriesDisplay");
-class food {
-    calories;
-    names;
-    food (c, n) {
-        calories = parseInt(c);
-        names = n;
-    }
-    print () {
-        return "This food is a " + names + ", and it contains " + calories + " calories.";
-    }
-    getCals () {
-        return this.calories;
-    }
+
+let food = function(ptype,pcalories) {
+    this.type = ptype;
+    this.calories = parseInt(pcalories);
 }
+
 document.addEventListener("DOMContentLoaded", function (event) {
-    let foods = [];
+    let foodArray = [];
     let cals = 0;
     done.addEventListener("click", function () {
-        f = new food(item.value, cal.value);
-        foods.push(f);
-        cals += f.getCals();
+        foodObject = new food(item.value, cal.value);
+
+        foodArray.push(foodObject);
+
+        console.log(foodArray);
+
+        cals += foodObject.calories;
         out.value = cals;
     });
     
